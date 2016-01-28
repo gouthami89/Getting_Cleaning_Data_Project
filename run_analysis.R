@@ -64,9 +64,13 @@ for (i in 1:length(colNames))
   colNames[i] = gsub("Acc","Acceleration",colNames[i])
   colNames[i] = gsub("Mag","",colNames[i])
 };
+ colnames(finalData) <- colNames;
 
 # 5. From the data set in step 4, create a second, independent tidy data set
 #    with the average of each variable for each activity and each subject.
+
+  install.packages("dplyr")
+  library(dplyr)
 
   finalDatatbl <- tbl_df(finalData)
   tidyselect <- select(finalDatatbl, -activityType)
