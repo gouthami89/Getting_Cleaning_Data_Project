@@ -43,3 +43,16 @@ colNames - column names of "finalData"
 logicalVector - contains logical values for column names containing the keywords "mean", "std"
 
 colNames - data vector containing modified column names for the "finalData" dataframe
+
+READ.TABLE() was used for data import
+
+CBIND() was used to obtain "trainingData" and "testData", while RBIND() was used to obtain merged "finalData1"
+
+GREPL() was used for pattern match, to identify column names containing phrases "mean", "std"
+
+MERGE() was used to include "activityType" in the data frame "finalData"
+
+GSUB() was used to for pattern match and replacement, to give more descriptive names to feature measurements
+
+DPLYR package was used to SELECT, GROUP, SUMMARIZE "finalData" to produce a tidy data set containing average of measurements in "finalData" of each subject engaged in each of the 6 activities
+ 
