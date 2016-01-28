@@ -77,4 +77,5 @@ for (i in 1:length(colNames))
   tidygroup <- group_by(tidyselect, activityId, subjectId)
   tidysummary <- summarize_each(tidygroup, funs(mean))
   tidyData <- merge(activityType, tidysummary, by='activityId', all.x = TRUE);
+  write.table(tidyData, "tidyData.txt", row.names = FALSE);
   View(tidyData);
